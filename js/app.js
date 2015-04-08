@@ -4,8 +4,6 @@ var $ = require('jquery');
 var Handlebars = require('handlebars');
 var Router = require('director/build/director').Router;
 
-require('todomvc-common');
-
 $(function() {
 
 	Handlebars.registerHelper('eq', function(a, b, options) {
