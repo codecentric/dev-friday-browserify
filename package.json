@@ -1,0 +1,26 @@
+{
+  "name": "jquery-browserify-todomvc",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A TodoMVC example based on CommonJS and browserify",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codecentric/dev-friday-browserify.git"
+  },
+  "author": "Bastian Krol <bastian.krol@web.de>",
+  "dependencies": {
+    "director": "^1.2.8",
+    "handlebars": "^3.0.1",
+    "jquery": "^2.1.3",
+    "todomvc-app-css": "^2.0.1",
+    "todomvc-common": "^1.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/codecentric/dev-friday-browserify/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/codecentric/dev-friday-browserify"
+}
