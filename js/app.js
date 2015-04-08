@@ -1,6 +1,12 @@
-/*global jQuery, Handlebars */
-jQuery(function ($) {
-	'use strict';
+'use strict';
+
+var $ = require('jquery');
+var Handlebars = require('handlebars');
+var Router = require('director/build/director').Router;
+
+require('todomvc-common');
+
+$(function() {
 
 	Handlebars.registerHelper('eq', function(a, b, options) {
 		return a === b ? options.fn(this) : options.inverse(this);

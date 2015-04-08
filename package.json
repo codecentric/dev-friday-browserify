@@ -4,13 +4,21 @@
   "version": "1.0.0",
   "description": "A TodoMVC example based on CommonJS and browserify",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build",
+    "build": "browserify js/app.js --outfile js/bundle.js",
+    "watch": "watchify js/app.js -v --outfile js/bundle.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/codecentric/dev-friday-browserify.git"
   },
   "author": "Bastian Krol <bastian.krol@web.de>",
+  "bugs": {
+    "url": "https://github.com/codecentric/dev-friday-browserify/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/codecentric/dev-friday-browserify",
   "dependencies": {
     "director": "^1.2.8",
     "handlebars": "^2.0.0",
@@ -18,9 +26,8 @@
     "todomvc-app-css": "^1.0.3",
     "todomvc-common": "^1.0.1"
   },
-  "bugs": {
-    "url": "https://github.com/codecentric/dev-friday-browserify/issues"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/codecentric/dev-friday-browserify"
+  "devDependencies": {
+    "browserify": "^9.0.7",
+    "watchify": "^3.1.0"
+  }
 }
