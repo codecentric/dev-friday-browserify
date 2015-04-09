@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rimraf js/bundle.js",
     "postinstall": "npm run build",
-    "build": "browserify js/app.js --outfile js/bundle.js",
-    "watch": "watchify js/app.js -v --outfile js/bundle.js",
+    "build": "browserify js/app.js -d --outfile js/bundle.js",
+    "watch": "watchify js/app.js -d -v --outfile js/bundle.js",
     "serve": "http-server -p 9000 .",
     "server": "npm run-script serve",
     "live": "live-reload --port 9001 .",
