@@ -1,6 +1,6 @@
 # Get Started
 ```
-# Install Node.js 0.10 or 0.12 or io.js
+# Node.js 0.10, 0.12 or io.js needs to be installed and npm needs to be in the PATH
 git clone git@github.com:codecentric/dev-friday-browserify.git
 cd dev-friday-browserify
 npm install
