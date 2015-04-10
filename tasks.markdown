@@ -28,10 +28,12 @@ $(function() {
 });
 ```
 Note that you have to change some things in package.json because `js/main.js` is now the entry point for Browserify.
-1. Bonus Questions:
-    * How can you implement private variables and functions with CommonJS?
-    * How can you implement public variables and functions with CommonJS?
-    * How can you implement "something like a class" with CommonJS?
+
+### Bonus Questions
+
+* How can you implement private variables and functions with CommonJS?
+* How can you implement public variables and functions with CommonJS?
+* How can you implement "something like a class" with CommonJS?
 
 ## 02. Use Third Party Modules From the npm Registry
 
