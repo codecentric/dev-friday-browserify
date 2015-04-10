@@ -4,6 +4,8 @@ var $ = require('jquery');
 var Handlebars = require('handlebars');
 var Router = require('director/build/director').Router;
 
+var _ = require('lodash');
+
 $(function() {
 
 	Handlebars.registerHelper('eq', function(a, b, options) {
@@ -110,12 +112,12 @@ $(function() {
 			this.render();
 		},
 		getActiveTodos: function () {
-			return this.todos.filter(function (todo) {
+			return _.filter(this.todos, function (todo) {
 				return !todo.completed;
 			});
 		},
 		getCompletedTodos: function () {
-			return this.todos.filter(function (todo) {
+			return _.filter(this.todos, function (todo) {
 				return todo.completed;
 			});
 		},
