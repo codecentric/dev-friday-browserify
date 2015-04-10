@@ -41,5 +41,11 @@ Note that you have to change some things in package.json because `js/main.js` is
 ## Browserify Transforms
 
 1. Extract the two Handlebars template from index.html into a separate files and use the Browserify transform [hbsfy](https://github.com/epeli/node-hbsfy) to precompile them at build time.
+    1. Install `hbsfy` from npm
+    1. Modify `package.json` so that the hbsfy transform is used. Make sure to update the `build` as well as the `watch` target.
+    1. Extract templates from index.html
+    1. Hint: Because the todo template uses a Handlebars helper, you need to do a bit more:
+        1. Instead of `var Handlebars = require('handlebars')` you now need `var Handlebars = require('hbsfy/runtime');`.
+        1. Pull the three lines beginning with `Handlebars.registerHelper` from to the top of the file. Put them directly after `var Handlebars = require('hbsfy/runtime');`.
 
 
