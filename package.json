@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rimraf js/bundle.js",
     "postinstall": "npm run build",
-    "build": "browserify js/app.js -d --outfile js/bundle.js",
-    "watch": "watchify js/app.js -d -v --outfile js/bundle.js",
+    "build": "browserify js/app.js -t hbsfy -d --outfile js/bundle.js",
+    "watch": "watchify js/app.js -t hbsfy -d -v --outfile js/bundle.js",
     "serve": "http-server -p 9000 .",
     "server": "npm run-script serve",
     "live": "live-reload --port 9001 .",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "browserify": "^9.0.7",
+    "hbsfy": "^2.2.1",
     "http-server": "^0.8.0",
     "live-reload": "^1.1.0",
     "parallelshell": "^1.1.1",

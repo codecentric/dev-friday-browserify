@@ -1,14 +1,17 @@
 'use strict';
 
 var $ = require('jquery');
-var Handlebars = require('handlebars');
 var Router = require('director/build/director').Router;
+var Handlebars = require('hbsfy/runtime');
+Handlebars.registerHelper('eq', function(a, b, options) {
+  return a === b ? options.fn(this) : options.inverse(this);
+});
+
+var todoTemplate = require('../templates/todo.hbs');
+var footerTemplate = require('../templates/footer.hbs');
 
 $(function() {
 
-	Handlebars.registerHelper('eq', function(a, b, options) {
-		return a === b ? options.fn(this) : options.inverse(this);
-	});
 
 	var ENTER_KEY = 13;
 	var ESCAPE_KEY = 27;
@@ -56,8 +59,6 @@ $(function() {
 			}).init('/all');
 		},
 		cacheElements: function () {
-			this.todoTemplate = Handlebars.compile($('#todo-template').html());
-			this.footerTemplate = Handlebars.compile($('#footer-template').html());
 			this.$todoApp = $('#todoapp');
 			this.$header = this.$todoApp.find('#header');
 			this.$main = this.$todoApp.find('#main');
@@ -81,7 +82,7 @@ $(function() {
 		},
 		render: function () {
 			var todos = this.getFilteredTodos();
-			this.$todoList.html(this.todoTemplate(todos));
+			this.$todoList.html(todoTemplate(todos));
 			this.$main.toggle(todos.length > 0);
 			this.$toggleAll.prop('checked', this.getActiveTodos().length === 0);
 			this.renderFooter();
@@ -91,7 +92,7 @@ $(function() {
 		renderFooter: function () {
 			var todoCount = this.todos.length;
 			var activeTodoCount = this.getActiveTodos().length;
-			var template = this.footerTemplate({
+			var template = footerTemplate({
 				activeTodoCount: activeTodoCount,
 				activeTodoWord: util.pluralize(activeTodoCount, 'item'),
 				completedTodos: todoCount - activeTodoCount,
